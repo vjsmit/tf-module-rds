@@ -6,3 +6,5 @@ variable "engine_version" {}
 variable "db_name" {}
 variable "subnet_ids" {}
 variable "kms_key_arn" {}
+variable "instance_count" {}
+variable "instance_class" {}

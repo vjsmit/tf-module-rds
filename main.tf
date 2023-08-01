@@ -16,3 +16,12 @@ resource "aws_rds_cluster" "main" {
   storage_encrypted       = true
   kms_key_id              = var.kms_key_arn
 }
+
+resource "aws_rds_cluster_instance" "main" {
+  count              = "${var.component}-${var.env}-instance-${count.index}"
+  identifier         = "aurora-cluster-demo-${count.index}"
+  cluster_identifier = aws_rds_cluster.main.id
+  instance_class     = var.instance_class
+  engine             = var.engine
+  engine_version     = var.engine_version
+}
