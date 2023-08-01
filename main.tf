@@ -40,7 +40,6 @@ resource "aws_rds_cluster" "main" {
   storage_encrypted       = true
   kms_key_id              = var.kms_key_arn
   vpc_security_group_ids  = [aws_security_group.sg.id]
-  skip_final_snapshot     = true
 }
 
 resource "aws_rds_cluster_instance" "main" {
@@ -50,4 +49,5 @@ resource "aws_rds_cluster_instance" "main" {
   instance_class     = var.instance_class
   engine             = var.engine
   engine_version     = var.engine_version
+  skip_final_snapshot     = true
 }
