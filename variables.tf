@@ -10,7 +10,3 @@ variable "instance_count" {}
 variable "instance_class" {}
 variable "vpc_id" {}
 variable "sg_subnets_cidr" {}
-variable "final_snapshot_identifier" {
-  type = string
-  description = "Final snapshot identifier"
-}
